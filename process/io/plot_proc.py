@@ -399,7 +399,7 @@ def plot_main_power_flow(
     # ===========================================
 
     # Load the plasma image
-    with resources.path("process.io", "plasma.png") as img_path:
+    with resources.files("process.io").joinpath("plasma.png") as img_path:
         plasma = mpimg.imread(img_path.open("rb"))
 
     # Display the plasma image over the figure, not the axes
@@ -422,7 +422,7 @@ def plot_main_power_flow(
         fontsize=11,
     )
     # Load the neutron image
-    with resources.path("process.io", "neutron.png") as img_path:
+    with resources.files("process.io").joinpath("neutron.png") as img_path:
         neutron = mpimg.imread(img_path.open("rb"))
 
     new_ax = axis.inset_axes(
@@ -569,7 +569,7 @@ def plot_main_power_flow(
     )
 
     # Load the alpha particle image
-    with resources.path("process.io", "alpha_particle.png") as img_path:
+    with resources.files("process.io").joinpath("alpha_particle.png") as img_path:
         alpha = mpimg.imread(img_path.open("rb"))
 
     # Display the alpha particle image over the figure, not the axes
@@ -655,7 +655,7 @@ def plot_main_power_flow(
     )
 
     # Load the HCD injector image
-    with resources.path("process.io", "hcd_injector.png") as img_path:
+    with resources.files("process.io").joinpath("hcd_injector.png") as img_path:
         hcd_injector_1 = hcd_injector_2 = mpimg.imread(img_path.open("rb"))
 
     # Display the injector image over the figure, not the axes
@@ -925,7 +925,7 @@ def plot_main_power_flow(
     # ===========================================
 
     # Load the turbine image
-    with resources.path("process.io", "turbine.png") as img_path:
+    with resources.files("process.io").joinpath("turbine.png") as img_path:
         turbine = mpimg.imread(img_path.open("rb"))
 
     # Display the turbine image over the figure, not the axes
@@ -983,7 +983,7 @@ def plot_main_power_flow(
     )
 
     # Load the generator image
-    with resources.path("process.io", "generator.png") as img_path:
+    with resources.files("process.io").joinpath("generator.png") as img_path:
         generator = mpimg.imread(img_path.open("rb"))
 
     # Display the generator image over the figure, not the axes
@@ -1052,7 +1052,7 @@ def plot_main_power_flow(
     )
 
     # Load the pylon image
-    with resources.path("process.io", "pylon.png") as img_path:
+    with resources.files("process.io").joinpath("pylon.png") as img_path:
         pylon = mpimg.imread(img_path.open("rb"))
 
     # Display the pylon image over the figure, not the axes
@@ -1261,7 +1261,7 @@ def plot_main_power_flow(
     # ================================
 
     # Load the first wall image
-    with resources.path("process.io", "fw.png") as img_path:
+    with resources.files("process.io").joinpath("fw.png") as img_path:
         fw = mpimg.imread(img_path.open("rb"))
 
     # Display the first wall image over the figure, not the axes
@@ -1519,7 +1519,7 @@ def plot_main_power_flow(
     )
 
     # Load the blanket image
-    with resources.path("process.io", "blanket_with_coolant.png") as img_path:
+    with resources.files("process.io").joinpath("blanket_with_coolant.png") as img_path:
         blanket = mpimg.imread(img_path.open("rb"))
 
     # Display the blanket image over the figure, not the axes
@@ -1562,7 +1562,7 @@ def plot_main_power_flow(
     )
 
     # Load the vacuum vessel image
-    with resources.path("process.io", "vv.png") as img_path:
+    with resources.files("process.io").joinpath("vv.png") as img_path:
         vv = mpimg.imread(img_path.open("rb"))
 
     # Display the vacuum vessel image over the figure, not the axes
@@ -1666,7 +1666,7 @@ def plot_main_power_flow(
     )
 
     # Load the divertor image
-    with resources.path("process.io", "divertor.png") as img_path:
+    with resources.files("process.io").joinpath("divertor.png") as img_path:
         divertor = mpimg.imread(img_path.open("rb"))
 
     # Display the divertor image over the figure, not the axes
@@ -2782,8 +2782,8 @@ def plot_main_plasma_information(
     # =========================================
 
     # Load the neutron image
-    with resources.path(
-        "process.io", "alpha_particle.png"
+    with resources.files(
+        "process.io").joinpath("alpha_particle.png"
     ) as alpha_particle_image_path:
         # Use importlib.resources to locate the image
         alpha_particle = mpimg.imread(alpha_particle_image_path.open("rb"))
@@ -2826,7 +2826,7 @@ def plot_main_plasma_information(
     )
 
     # =========================================
-    with resources.path("process.io", "neutron.png") as neutron_image_path:
+    with resources.files("process.io").joinpath("neutron.png") as neutron_image_path:
         neutron = mpimg.imread(neutron_image_path.open("rb"))
     new_ax = axis.inset_axes(
         [0.975, 0.75, 0.075, 0.075], transform=axis.transAxes, zorder=10
@@ -12372,8 +12372,8 @@ def main_plot(
     # Checking the impurity data folder
     # Get path to impurity data dir
     # TODO use Path objects throughout module, not strings
-    with resources.path(
-        "process.data.lz_non_corona_14_elements", "Ar_lz_tau.dat"
+    with resources.files(
+        "process.data.lz_non_corona_14_elements").joinpath("Ar_lz_tau.dat"
     ) as imp_path:
         data_folder = str(imp_path.parent) + "/"
 
